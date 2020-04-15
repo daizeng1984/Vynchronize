@@ -40,6 +40,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/mobile-style.css" rel="stylesheet">
     <link href="css/html5player.css" rel="stylesheet">
+    <link rel="stylesheet" href="js/dependencies/DPlayer.min.css" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
@@ -140,7 +141,7 @@
                             <a class="dropdown-item" onclick="changePlayer(roomnum, 0)"><i class="fab fa-youtube"></i> YouTube</a>
                             <a class="dropdown-item" onclick="changePlayer(roomnum, 1)"><img width="14px" height="14px" src="img/dailymotion-logo.svg" alt="Daily Motion Logo"> Daily Motion</a>
                             <a class="dropdown-item" onclick="changePlayer(roomnum, 2)"><i class="fab fa-vimeo"></i> Vimeo</a>
-                            <a class="dropdown-item" onclick="changePlayer(roomnum, 3)"><i class="fas fa-file-video"></i> HTML5 Player (.mp4/.webm) (Beta)</a>
+                            <a class="dropdown-item" onclick="changePlayer(roomnum, 3)"><i class="fas fa-file-video"></i> M3U8 :) (Beta)</a>
                         </div>
                     </div>
 
@@ -165,14 +166,15 @@
                         <iframe class="video" id="player-vimeo" src="https://player.vimeo.com/video/76979871" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                     <div id='HTML5Area'>
-                        <div class="html5player">
-                            <video src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" width="640" height="360" class="video html5video" id="html5src" controls>
-                            <!-- <source src="video/sintel-short.mp4" type="video/mp4">
-                            <source src="video/sintel-short.webm" type="video/webm"> -->
-                            <!-- fallback content here -->
-                            </video>
+                        <div class="html5player" id="dplayer">
+                            <!-- <video src="https://commondatastorage.googleapis.com/gtv&#45;videos&#45;bucket/sample/BigBuckBunny.mp4" width="640" height="360" class="video html5video" id="html5src" controls> -->
+                            <!-- <!&#45;&#45; <source src="video/sintel&#45;short.mp4" type="video/mp4"> -->
+                            <!-- <source src="video/sintel&#45;short.webm" type="video/webm"> &#45;&#45;> -->
+                            <!-- <!&#45;&#45; fallback content here &#45;&#45;> -->
+                            <!-- </video> -->
                         </div>
                     </div>
+                    
 
                     <!----------------------------------- PLAYER AREA ----------------------------------->
                     <!-- <hr> -->
@@ -743,6 +745,8 @@
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="js/vimeo.js"></script>
     <!-- HTML5 Player -->
+    <script src="js/dependencies/hls.min.js"></script>
+    <script src="js/dependencies/DPlayer.min.js"></script>
     <script src="js/html5.js"></script>
 
 </body>

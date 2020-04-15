@@ -138,9 +138,9 @@ socket.on('justSeek', function(data) {
 
             break;
         case 3:
-            var clientTime = media.currentTime
+            var clientTime = media.video.currentTime
             if (clientTime < currTime - .2 || clientTime > currTime + .2) {
-                media.currentTime = currTime
+                media.seek(currTime)
             }
             // playOther(roomnum)
             break;

@@ -10,23 +10,30 @@
 //     }
 // }
 
-var media = document.querySelector('video');
+var media = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        url: '',
+        type: 'hls'
+        // pic: 'demo.jpg',
+        // thumbnails: 'thumbnails.jpg',
+    },
+});
 
-// Event listeners
-media.addEventListener("play", function(e) {
+media.on("play", function(e) {
     if (host) {
         playOther(roomnum)
     } else {
         getHostData(roomnum)
     }
 })
-media.addEventListener("pause", function(e) {
+media.on("pause", function(e) {
     if (host) {
         pauseOther(roomnum)
     }
 })
-media.addEventListener("seeked", function(e) {
-    var currTime = media.currentTime
+media.on("seeked", function(e) {
+    var currTime = media.video.currentTime
     if (host) {
         seekOther(roomnum, currTime)
     }
@@ -43,6 +50,12 @@ function html5Play() {
 
 // Load video
 function htmlLoadVideo(videoId) {
-    console.log("changing video to: " + videoId)
-    media.src = videoId
+    console.log("changing video to url: " + videoId)
+    media.switchVideo({
+        url: videoId,
+        type: 'hls'
+    })
 }
+
+
+
